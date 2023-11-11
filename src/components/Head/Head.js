@@ -1,9 +1,12 @@
+import hamberger from '../../assets/svgs/hamberger.svg';
+import ytlogo from '../../assets/svgs/ytlogo.svg';
+
 const Head = () => {
     return ( <>
     <div className="grid grid-flow-col shadow-lg pt-2">
         <div className="flex col-span-1">
-        <img src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg" alt="" className="w-14 h-13 mr-4"/>
-        <img src="https://i.gadgets360cdn.com/large/youtube_logo_new_official_1504077880072.jpg" alt="" className="w-28 h-13"/>
+        <img src={hamberger} alt="" className="ml-4 mr-4 w-8 h-13"/>
+        <img src={ytlogo} alt="" className="w-28 h-13"/>
         </div>
 
         <div className="flex col-span-10 justify-center align-middle">
