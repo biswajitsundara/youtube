@@ -4,8 +4,10 @@ import VideoContainer from "./VideoContainer";
 const MainContainer = () => {
   return (
     <div className="grid col-span-11">
-      <ButtonsList />
-      <VideoContainer />
+      <div className="ml-5 grid-flow-row">
+        <ButtonsList />
+        <VideoContainer/>
+      </div>
     </div>
   );
 };
