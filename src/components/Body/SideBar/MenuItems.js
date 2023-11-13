@@ -18,7 +18,7 @@ const MenuItems = () => {
   const menuList = [
     {
       menuText: "Home",
-      svg: homesvg,
+      svg: homesvg
     },
     {
       menuText: "Shorts",

@@ -1,12 +1,19 @@
+import { Link } from "react-router-dom";
+
 const MenuListItem = (props) => {
   const { menuList, menuHeading, isLastItem } = props;
 
   return (
     <div>
-      {menuHeading && <h4 className="text-base font-bold mb-2">{menuHeading}</h4> }
+      {menuHeading && (
+        <h4 className="text-base font-bold mb-2">{menuHeading}</h4>
+      )}
       <ul>
         {menuList.map((menuListItem) => (
-          <li key={menuListItem.menuText} className="flex gap-x-5 p-2 hover:bg-gray-100 rounded cursor-pointer">
+          <li
+            key={menuListItem.menuText}
+            className="flex gap-x-5 p-2 hover:bg-gray-100 rounded cursor-pointer"
+          >
             <img src={menuListItem.svg} alt="" />
             {menuListItem.menuText}
           </li>
