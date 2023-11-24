@@ -3,10 +3,28 @@ import ytlogo from '../../assets/svgs/ytlogo.svg';
 import searchicon from '../../assets/svgs/search.svg';
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../../utils/appSlice';
+import { useEffect, useState } from 'react';
 
 const Head = () => {
 
     const dispatch = useDispatch();
+    const [searchQuery, setSearchQuery] = useState('');
+
+    
+
+    useEffect(()=>{
+
+        //Make an API call after every key press
+        //but if the difference between 2 API call is <200ms
+        //decline the API call
+        console.log(searchQuery);
+    },[searchQuery])
+
+    // const getSuggestions = () =>{
+    //   const data = await fetch(YOUTUBE_SEARCH_API + query);
+    //   const json = await data.json();
+    //   console.log(json);
+    // }
 
     const toggleMenuHandler = () =>{
         dispatch(toggleMenu());
@@ -20,7 +38,7 @@ const Head = () => {
         </div>
 
         <div className="flex col-span-10 justify-center align-middle">
-            <input type="text" placeholder="Enter" className="w-1/2 border border-gray-400 h-10 rounded-l-full px-4"/>
+            <input type="text" placeholder="Search" className="w-1/2 border border-gray-400 h-10 rounded-l-full px-4" value={searchQuery} onChange={(e)=> setSearchQuery(e.target.value)}/>
             <button className="h-10  border border-gray-400 px-4 rounded-r-full bg-gray-100"><img src={searchicon} alt="" className="w-6"/></button>
         </div>
 
