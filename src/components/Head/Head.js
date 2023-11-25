@@ -4,6 +4,7 @@ import searchicon from '../../assets/svgs/search.svg';
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../../utils/appSlice';
 import { useEffect, useState } from 'react';
+import { YOUTUBE_SEARCH_API } from '../../utils/constants';
 
 const Head = () => {
 
@@ -17,14 +18,23 @@ const Head = () => {
         //Make an API call after every key press
         //but if the difference between 2 API call is <200ms
         //decline the API call
-        console.log(searchQuery);
+        //console.log(searchQuery);
+
+        const timer = setTimeout(()=>{
+            getSuggestions();
+        }, 300)
+
+        return () =>{
+            clearTimeout(timer);
+        }
+        
     },[searchQuery])
 
-    // const getSuggestions = () =>{
-    //   const data = await fetch(YOUTUBE_SEARCH_API + query);
-    //   const json = await data.json();
-    //   console.log(json);
-    // }
+    const getSuggestions = async() =>{
+      const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+      const json = await data.json();
+      console.log(json);
+    }
 
     const toggleMenuHandler = () =>{
         dispatch(toggleMenu());
