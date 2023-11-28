@@ -70,8 +70,8 @@ const Head = () => {
           <div className="fixed bg-white ml-60 py-2 w-[34rem] rounded-lg shadow-lg border border-gray-100">
             <ul>
               {suggestions.map((s) => (
-                <li key={s} className="py-2 hover:bg-gray-100 px-5">
-                  &#128270; {s}
+                <li key={s} className="py-2 hover:bg-gray-100 px-5 flex">
+                  <img src={searchicon} alt="" /> <span> {s}</span>
                 </li>
               ))}
               
