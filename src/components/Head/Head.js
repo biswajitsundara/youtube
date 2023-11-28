@@ -55,7 +55,7 @@ const Head = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-1/2 border border-gray-400 h-10 rounded-l-full px-4"
+              className="w-1/2 border border-gray-400 h-10 rounded-l-full px-4 outline-none focus:border-blue-500 focus:border-2"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onBlur = {()=> setShowSuggestions(false)}
@@ -71,7 +71,7 @@ const Head = () => {
             <ul>
               {suggestions.map((s) => (
                 <li key={s} className="py-2 hover:bg-gray-100 px-5 flex">
-                  <img src={searchicon} alt="" /> <span> {s}</span>
+                  <img src={searchicon} alt="" className="mr-2"/> <span> {s}</span>
                 </li>
               ))}
               
