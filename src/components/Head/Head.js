@@ -40,7 +40,9 @@ const Head = () => {
     const json = await data.json();
     setSuggestions(json[1]);
 
-    dispatch(cacheResults)
+    dispatch(cacheResults({
+      [searchQuery]: json[1]
+    }))
   };
 
   const toggleMenuHandler = () => {
