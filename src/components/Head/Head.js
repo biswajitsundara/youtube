@@ -14,20 +14,20 @@ const Head = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchCache = useSelector(store => store.search);
 
+
   useEffect(() => {
     //Make an API call after every key press
     //but if the difference between 2 API call is <200ms
     //decline the API call
-    //console.log(searchQuery);
 
     const timer = setTimeout(() => {
+
       if(searchCache[searchQuery]){
         setSuggestions(searchCache[searchQuery]);
       }
       else{
         getSuggestions();
       }
-      getSuggestions();
     }, 300);
 
     return () => {
@@ -40,9 +40,11 @@ const Head = () => {
     const json = await data.json();
     setSuggestions(json[1]);
 
+    console.log('make api call + '+searchQuery);
     dispatch(cacheResults({
       [searchQuery]: json[1]
     }))
+
   };
 
   const toggleMenuHandler = () => {
