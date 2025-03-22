@@ -5,7 +5,6 @@
 * `npm start`
 * `npm test`
 * `npm run build`
-* `npm run build`
 
 ## Component Structure
 * Head

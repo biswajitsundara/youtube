@@ -11,7 +11,7 @@ const SideBar = () => {
   }
 
   return (
-    <div className="p-5 shadow-lg col-span-1">
+    <div className="p-5 col-span-2">
       <MenuItems />
     </div>
   );

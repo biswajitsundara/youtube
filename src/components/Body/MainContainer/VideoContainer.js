@@ -17,6 +17,11 @@ const VideoContainer = () => {
     console.log(json.items);
   };
 
+  if(!videos){
+    console.log('videos length is zero')
+    return null;
+  }
+
   return (
     <div className="mt-6 ml-5 flex flex-wrap">
       {videos.map((video) => (

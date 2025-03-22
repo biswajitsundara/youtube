@@ -6,6 +6,7 @@ import { toggleMenu } from "../../utils/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../../utils/constants";
 import { cacheResults } from "../../utils/searchSlice";
+import profile from "../../assets/svgs/profile.svg";
 
 const Head = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const Head = () => {
     };
   }, [searchQuery]);
 
+
   const getSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
@@ -52,7 +54,7 @@ const Head = () => {
   };
   return (
     <>
-      <div className="grid grid-flow-col shadow-lg pt-2">
+      <div className="grid grid-flow-col pt-2">
         <div className="flex col-span-1">
           {/* <div className='hover:bg-gray-500 cursor-pointer hover:rounded-s-full hover:rounded-e-full ml-3 h-12 p-2'>Hello</div> */}
           <img
@@ -96,9 +98,9 @@ const Head = () => {
 
         <div className="col-span-1">
           <img
-            src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+            src={profile}
             alt=""
-            className="w-14"
+            className="w-8"
           />
         </div>
       </div>
