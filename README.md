@@ -1,20 +1,8 @@
-# Getting Started with Youtube Clone
+# Youtube app
+To run the application do the below.
+1. Create a .env file
+2. Add the key and the value 
+```js
+REACT_APP_GOOGLE_API_KEY = "sbdjsdhjfh375873485734";
+```
 
-## Available Scripts
-
-* `npm start`
-* `npm test`
-* `npm run build`
-
-## Component Structure
-* Head
-* Body
-    * SideBar
-       * Menu Items
-    * Main Container
-       * Buttons List
-       * Video Container
-           * Video Card    
-
-## Author
-Biswajit Sundara
