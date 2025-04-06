@@ -5,6 +5,7 @@ import store from "./util/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/Body/MainContainer/MainContainer";
 import WatchPage from "./components/Watch/WatchPage";
+import Wrapper from "./components/scroll/Wrapper";
 
 function App() {
 
@@ -25,8 +26,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Head />
-      {/* <Body /> */}
+      <Head/>
       <RouterProvider router={appRouter} />
     </Provider>
   );

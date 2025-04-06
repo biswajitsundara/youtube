@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEOS_API } from "../../../../util/constants";
-import VideoCard, {AdvideoCard} from "./VideoCard";
+import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenu } from "../../../../util/appSlice";
 
 function VideoContainer() {
   const [videos, setVideos] = useState([]);
+
+
+  
   useEffect(() => {
     getVideos();
+    
   }, []);
 
   const getVideos = async () => {
@@ -15,13 +21,12 @@ function VideoContainer() {
     setVideos(data.items);
   };
 
-  if (videos.length <= 0) {
+  if (!videos) {
     return null;
   }
 
   return (
-    <div className="flex flex-wrap">
-      <AdvideoCard info={videos[0]}/>
+    <div className="mt-6 ml-5 flex flex-wrap">
       {videos.map((videoItem) => (
         <Link key={videoItem.id} to={"/watch?v=" + videoItem.id}>
           <VideoCard info={videoItem} />
@@ -30,7 +35,5 @@ function VideoContainer() {
     </div>
   );
 }
-
-
 
 export default VideoContainer;

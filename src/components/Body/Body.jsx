@@ -1,14 +1,14 @@
 import React from 'react'
 import Sidebar from '../Body/Sidebar/Sidebar'
-import MainContainer from '../Body/MainContainer/MainContainer'
 import { Outlet } from 'react-router-dom'
+import ScrollToTop from '../scroll/ScrollToTop'
 
 function Body() {
   return (
-    <div className='flex'>
+    <div className='grid grid-flow-col'>
       <Sidebar />
+      <ScrollToTop/>
       <Outlet />
-      {/* <MainContainer /> */}
     </div>
   )
 }
